@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modulo 1 - Reclamos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reclamos-facturas">
+  <header class="topbar">
+    <div class="brand">Modulo 1: Reclamos</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="reclamos-facturas.html">Facturas</a>
+      <a href="validacion-facturas.html">Modulo 2: Validacion</a>
+      <a href="logistica-pendientes.html">Modulo 3: Logistica</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Pantalla Principal - Facturas</h1>
+      <p class="subtitle">Seleccione una factura y pulse <strong>Registrar Reclamo</strong>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Numero de factura</th>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody id="invoicesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="reclamos.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recepcion de Devolucion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="logistica-recepcion">
+  <header class="topbar">
+    <div class="brand">Modulo 3: Logistica</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a href="reclamos-facturas.html">Reclamos</a>
+      <a href="validacion-facturas.html">Validacion</a>
+      <a class="active" href="logistica-pendientes.html">Pendientes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Recepcion de Devolucion Gestionada</h1>
+      <p class="subtitle"><strong>Factura:</strong> <span id="invoiceContext"></span></p>
+      <div id="receptionMessage" class="banner hidden"></div>
+
+      <section class="section">
+        <h3>Datos de gestion</h3>
+        <p><strong>Tipo logistico:</strong> <span id="logisticTypeValue"></span></p>
+        <p><strong>Bodega destino:</strong> <span id="warehouseValue"></span></p>
+        <p><strong>Transporte:</strong> <span id="transportValue"></span></p>
+        <p><strong>Ruta:</strong> <span id="routeValue"></span></p>
+        <p><strong>Fecha/hora:</strong> <span id="dateTimeValue"></span></p>
+      </section>
+
+      <section class="section">
+        <h3>Verificacion de productos recibidos</h3>
+        <p class="inline-info">
+          Marque cada producto que realmente llego. Si no llegan todos, debe registrar motivo.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <label>
+                    <input type="checkbox" id="selectAllReceived">
+                    Todos
+                  </label>
+                </th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Motivo del reclamo</th>
+              </tr>
+            </thead>
+            <tbody id="receptionProductsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="partialReasonWrap" class="section hidden">
+        <h3>Motivo de recepcion parcial</h3>
+        <div class="field">
+          <label for="partialReason">Explique por que no se recibieron todos los productos</label>
+          <textarea id="partialReason" placeholder="Ejemplo: faltaron cajas del producto X por diferencia en retiro."></textarea>
+        </div>
+      </section>
+
+      <div class="row-actions">
+        <button id="confirmReceptionBtn" class="btn btn-primary" disabled>Confirmar retiro</button>
+        <a href="logistica-pendientes.html" class="btn btn-secondary">Volver</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="logistica.js"></script>
+</body>
+</html>

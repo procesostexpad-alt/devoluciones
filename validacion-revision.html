@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revision de Reclamo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="validacion-revision">
+  <header class="topbar">
+    <div class="brand">Modulo 2: Validacion de Devolucion</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a href="reclamos-facturas.html">Reclamos</a>
+      <a class="active" href="validacion-facturas.html">Facturas con Reclamo</a>
+      <a href="logistica-pendientes.html">Modulo 3: Logistica</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Formulario de Revision</h1>
+      <p class="subtitle"><strong>Factura:</strong> <span id="invoiceContext"></span></p>
+      <div id="reviewMessage" class="banner hidden"></div>
+
+      <section class="section">
+        <h3>Informacion del reclamo</h3>
+        <p><strong>Tipo de reclamo:</strong> <span id="claimTypeValue"></span></p>
+        <p><strong>Motivo general:</strong> <span id="claimGeneralMotive"></span></p>
+      </section>
+
+      <section class="section">
+        <h3>Productos afectados</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Motivo especifico</th>
+                <th>Observacion</th>
+              </tr>
+            </thead>
+            <tbody id="affectedProductsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Observaciones</h3>
+        <ul id="observationList" class="summary-list"></ul>
+      </section>
+
+      <section class="section">
+        <h3>Decision del reclamo</h3>
+        <div class="radios">
+          <label class="radio-item">
+            <input type="radio" name="claimDecision" value="aceptar">
+            <span>Aceptar reclamo</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="claimDecision" value="rechazar">
+            <span>Rechazar reclamo</span>
+          </label>
+        </div>
+      </section>
+
+      <section id="acceptFields" class="section hidden">
+        <h3>Tipo de gestion logistica</h3>
+        <div class="radios">
+          <label class="radio-item">
+            <input type="radio" name="logisticType" value="contra_entrega">
+            <span>Contra entrega</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="logisticType" value="post_entrega">
+            <span>Post entrega</span>
+          </label>
+        </div>
+        <p class="inline-info">Contra entrega: devolucion con autorizacion en el momento de entrega.</p>
+        <p class="inline-info">Post entrega: logistica programa retiro del producto.</p>
+
+        <div class="field">
+          <label for="returnSummary">Motivo de devolucion (resumen)</label>
+          <textarea id="returnSummary" placeholder="Explique por que se acepta la devolucion."></textarea>
+        </div>
+      </section>
+
+      <div class="row-actions">
+        <button id="confirmDecisionBtn" class="btn btn-primary">Confirmar decision</button>
+        <a href="validacion-facturas.html" class="btn btn-secondary">Volver</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="validacion.js"></script>
+</body>
+</html>

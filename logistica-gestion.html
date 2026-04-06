@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion de Retiro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="logistica-gestion">
+  <header class="topbar">
+    <div class="brand">Modulo 3: Logistica</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a href="reclamos-facturas.html">Reclamos</a>
+      <a href="validacion-facturas.html">Validacion</a>
+      <a class="active" href="logistica-pendientes.html">Pendientes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Gestion de Retiro</h1>
+      <p class="subtitle"><strong>Factura:</strong> <span id="invoiceContext"></span></p>
+      <div id="logisticsMessage" class="banner hidden"></div>
+
+      <section class="section">
+        <h3>Resumen de instruccion</h3>
+        <p><strong>Tipo logistico:</strong> <span id="logisticTypeValue"></span></p>
+        <p><strong>Bodega destino:</strong> <span id="warehouseValue"></span></p>
+      </section>
+
+      <section class="section">
+        <h3>Datos de transporte</h3>
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="transportInput">Transporte</label>
+            <input id="transportInput" type="text" placeholder="Vehiculo o proveedor">
+          </div>
+          <div class="field">
+            <label for="routeInput">Ruta</label>
+            <input id="routeInput" type="text" placeholder="Ruta de retiro">
+          </div>
+        </div>
+      </section>
+
+      <section id="contraEntregaFields" class="section hidden">
+        <h3>Registro Contra Entrega</h3>
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="contraPickupDateTime">Fecha y hora de retiro realizado</label>
+            <input id="contraPickupDateTime" type="datetime-local">
+          </div>
+          <div class="field">
+            <label for="contraPickedBy">Quien retiro</label>
+            <input id="contraPickedBy" type="text" placeholder="Nombre y cargo">
+          </div>
+        </div>
+      </section>
+
+      <section id="postEntregaFields" class="section hidden">
+        <h3>Registro Post Entrega</h3>
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="postPickupDateTime">Fecha y hora programada para retiro</label>
+            <input id="postPickupDateTime" type="datetime-local">
+          </div>
+          <div class="field">
+            <label for="postPickedBy">Quien va a retirar</label>
+            <input id="postPickedBy" type="text" placeholder="Nombre y cargo">
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Productos del reclamo</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Motivo</th>
+              </tr>
+            </thead>
+            <tbody id="plannedProductsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="row-actions">
+        <button id="saveLogisticsBtn" class="btn btn-primary">Confirmar gestion de retiro</button>
+        <a href="logistica-pendientes.html" class="btn btn-secondary">Volver</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="logistica.js"></script>
+</body>
+</html>

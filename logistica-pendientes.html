@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modulo 3 - Logistica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="logistica-pendientes">
+  <header class="topbar">
+    <div class="brand">Modulo 3: Logistica</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a href="reclamos-facturas.html">Reclamos</a>
+      <a href="validacion-facturas.html">Validacion</a>
+      <a class="active" href="logistica-pendientes.html">Pendientes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Control de Devoluciones</h1>
+      <p class="subtitle">Primero se gestiona el retiro. Luego se confirma que productos se recibieron.</p>
+
+      <section class="section">
+        <h3>Pendientes de Gestion de Retiro</h3>
+        <div id="manageTableWrap" class="table-wrap hidden">
+          <table>
+            <thead>
+              <tr>
+                <th>Factura</th>
+                <th>Cliente</th>
+                <th>Tipo logistico</th>
+                <th>Bodega destino</th>
+                <th>Estado</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody id="manageTableBody"></tbody>
+          </table>
+        </div>
+        <div id="manageEmpty" class="empty hidden">No hay casos pendientes de gestionar.</div>
+      </section>
+
+      <section class="section">
+        <h3>Devoluciones Gestionadas por Recepcionar</h3>
+        <div id="managedTableWrap" class="table-wrap hidden">
+          <table>
+            <thead>
+              <tr>
+                <th>Factura</th>
+                <th>Cliente</th>
+                <th>Transporte</th>
+                <th>Ruta</th>
+                <th>Fecha/hora</th>
+                <th>Estado</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody id="managedTableBody"></tbody>
+          </table>
+        </div>
+        <div id="managedEmpty" class="empty hidden">No hay devoluciones gestionadas pendientes de recepcion.</div>
+      </section>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="logistica.js"></script>
+</body>
+</html>

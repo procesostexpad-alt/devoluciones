@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modulo 2 - Validacion de Devolucion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="validacion-facturas">
+  <header class="topbar">
+    <div class="brand">Modulo 2: Validacion de Devolucion</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a href="reclamos-facturas.html">Reclamos</a>
+      <a class="active" href="validacion-facturas.html">Facturas con Reclamo</a>
+      <a href="logistica-pendientes.html">Modulo 3: Logistica</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Pantalla Principal - Facturas con Reclamo</h1>
+      <p class="subtitle">Solo se muestran facturas en estado <strong>Reclamo pendiente</strong>.</p>
+
+      <div id="pendingTableWrap" class="table-wrap hidden">
+        <table>
+          <thead>
+            <tr>
+              <th>Numero de factura</th>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody id="pendingTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="pendingEmpty" class="empty hidden">
+        No hay reclamos pendientes por revisar.
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="validacion.js"></script>
+</body>
+</html>

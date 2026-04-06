@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar Reclamo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reclamos-formulario">
+  <header class="topbar">
+    <div class="brand">Modulo 1: Reclamos</div>
+    <nav class="topnav">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="reclamos-facturas.html">Facturas</a>
+      <a href="validacion-facturas.html">Modulo 2: Validacion</a>
+      <a href="logistica-pendientes.html">Modulo 3: Logistica</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="page-title">Formulario de Reclamo</h1>
+      <p class="subtitle"><strong>Factura:</strong> <span id="invoiceContext"></span></p>
+      <p class="subtitle" id="invoiceMeta"></p>
+
+      <div id="formMessage" class="banner hidden"></div>
+
+      <section class="section">
+        <h3>Seccion 1: Tipo de reclamo</h3>
+        <div id="categoryRadios" class="radios"></div>
+      </section>
+
+      <section class="section">
+        <h3>Seccion 2: Motivo especifico</h3>
+        <div class="field">
+          <label for="generalMotiveSelect">Motivo especifico (dinamico)</label>
+          <select id="generalMotiveSelect"></select>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Seccion 3: Tipo de reclamo</h3>
+        <div id="timingRadios" class="radios"></div>
+      </section>
+
+      <section class="section">
+        <h3>Detalle de Productos</h3>
+        <p class="inline-info">Puede trabajar en modo total o parcial. Tambien puede elegir directo en la tabla.</p>
+        <div class="grid grid-2">
+          <div class="field">
+            <label>Alcance del reclamo en productos</label>
+            <div id="coverageRadios" class="radios">
+              <label class="radio-item">
+                <input type="radio" name="claimCoverage" value="total">
+                <span>Total (todos los productos)</span>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="claimCoverage" value="parcial" checked>
+                <span>Parcial (solo seleccionados)</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bulkModeSelect">Aplicacion de motivo en modo total</label>
+            <select id="bulkModeSelect">
+              <option value="same">Mismo motivo para todos</option>
+              <option value="mixed">Varios motivos para todos</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div id="bulkSameWrap" class="field">
+            <label for="bulkSingleMotive">Motivo masivo unico</label>
+            <select id="bulkSingleMotive"></select>
+          </div>
+          <div id="bulkMixedWrap" class="field hidden">
+            <label for="bulkMultiMotive">Motivos masivos (seleccion multiple)</label>
+            <select id="bulkMultiMotive" multiple size="3"></select>
+          </div>
+        </div>
+        <div class="row-actions">
+          <button id="applyBulkBtn" type="button" class="btn btn-secondary">Aplicar motivos segun alcance</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <label>
+                    <input type="checkbox" id="selectAllProducts">
+                    Todos
+                  </label>
+                </th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Observacion</th>
+                <th>Motivo especifico</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="row-actions">
+        <button id="saveClaimBtn" class="btn btn-primary">Guardar Reclamo</button>
+        <a href="reclamos-facturas.html" class="btn btn-secondary">Volver</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="reclamos.js"></script>
+</body>
+</html>
